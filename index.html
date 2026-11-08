@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elilta East Africa — Premium Direct-to-Consumer Import Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #09090b; color: #f4f4f5; }
+    .glass { background: rgba(24, 24, 27, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-amber-500 selection:text-black">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 glass border-b border-white/10 px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-amber-300 flex items-center justify-center text-black font-extrabold text-xl shadow-lg shadow-amber-500/20">E</div>
+      <div>
+        <span class="text-lg font-bold tracking-tight text-white">Elilta</span>
+        <span class="text-xs block text-amber-400 font-medium">East Africa Direct Logistics</span>
+      </div>
+    </div>
+    <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-zinc-300">
+      <a href="#products" class="hover:text-amber-400 transition">Curated Catalog</a>
+      <a href="#benefits" class="hover:text-amber-400 transition">Express Delivery</a>
+      <a href="#guarantee" class="hover:text-amber-400 transition">Buyer Protection</a>
+    </nav>
+    <div class="flex items-center space-x-4">
+      <div class="hidden sm:flex items-center space-x-2 bg-emerald-950/50 border border-emerald-500/30 px-3 py-1.5 rounded-full text-xs text-emerald-400">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>M-Pesa & Card Live (KES)</span>
+      </div>
+      <a href="https://wa.me/254756238589" target="_blank" class="bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition border border-white/10">WhatsApp Concierge</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden pt-20 pb-28 px-6 lg:px-12 flex flex-col items-center text-center">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-500/10 via-zinc-900/40 to-transparent pointer-events-none"></div>
+    <div class="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-500/20 px-4 py-2 rounded-full text-xs font-semibold text-amber-400 mb-6">
+      <span>🚀 Direct Factory-to-Doorstep Logistics Across Kenya & East Africa</span>
+    </div>
+    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight max-w-5xl text-white mb-6">
+      High-Performance Goods. <br class="hidden sm:inline">
+      <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-yellow-500 bg-clip-text text-transparent">Delivered Instantly in KES.</span>
+    </h1>
+    <p class="text-lg sm:text-xl text-zinc-400 max-w-2xl mb-10">
+      Zero customs hassle. Secure Paystack checkout supporting Visa, Mastercard, and M-Pesa. Guaranteed doorstep delivery across Nairobi, Mombasa, Kisumu, and beyond.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+      <a href="#products" class="bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-black font-bold px-8 py-4 rounded-2xl shadow-xl shadow-amber-500/20 transition transform hover:-translate-y-0.5 text-center">Shop Curated Catalog</a>
+      <a href="https://wa.me/254756238589?text=Hello%20Elilta%20Team,%20I%20need%20help%20with%20an%20order." target="_blank" class="glass hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-2xl transition text-center">Talk to Concierge</a>
+    </div>
+
+    <!-- Trust Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 max-w-5xl w-full text-left">
+      <div class="glass p-6 rounded-2xl">
+        <div class="text-3xl font-extrabold text-white mb-1">3,400+</div>
+        <div class="text-xs text-zinc-400 uppercase tracking-wider">Successful Deliveries</div>
+      </div>
+      <div class="glass p-6 rounded-2xl">
+        <div class="text-3xl font-extrabold text-amber-400 mb-1">24 - 48h</div>
+        <div class="text-xs text-zinc-400 uppercase tracking-wider">Nairobi Express Dispatch</div>
+      </div>
+      <div class="glass p-6 rounded-2xl">
+        <div class="text-3xl font-extrabold text-white mb-1">100%</div>
+        <div class="text-xs text-zinc-400 uppercase tracking-wider">Paystack Secured</div>
+      </div>
+      <div class="glass p-6 rounded-2xl">
+        <div class="text-3xl font-extrabold text-emerald-400 mb-1">M-Pesa</div>
+        <div class="text-xs text-zinc-400 uppercase tracking-wider">Instant STK Push Enabled</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Catalog -->
+  <section id="products" class="py-20 px-6 lg:px-12 max-w-7xl mx-auto w-full">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <span class="text-amber-400 text-sm font-bold uppercase tracking-wider">Curated Selections</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Trending High-Margin Imports</h2>
+      </div>
+      <p class="text-zinc-400 text-sm mt-2 md:mt-0">All prices inclusive of shipping & local handling. Pay via Card or M-Pesa.</p>
+    </div>
+
+    <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Products will be rendered dynamically -->
+    </div>
+  </section>
+
+  <!-- Checkout Modal -->
+  <div id="checkout-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="glass max-w-md w-full p-8 rounded-3xl relative border border-white/20 shadow-2xl">
+      <button onclick="closeCheckout()" class="absolute top-6 right-6 text-zinc-400 hover:text-white text-xl font-bold">&times;</button>
+      <h3 class="text-2xl font-bold text-white mb-2">Secure Express Checkout</h3>
+      <p id="modal-product-name" class="text-amber-400 font-semibold mb-6">Product Title</p>
+
+      <form id="checkout-form" onsubmit="handleCheckout(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-1">Full Name</label>
+          <input type="text" id="cust-name" required placeholder="Kebron Isaias" class="w-full bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-400 transition">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-1">Email Address (for Receipt & Tracking)</label>
+          <input type="email" id="cust-email" required placeholder="kebronafle@gmail.com" class="w-full bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-400 transition">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-1">M-Pesa Phone or Contact Phone</label>
+          <input type="tel" id="cust-phone" required placeholder="0769721573" class="w-full bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-400 transition">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-1">Delivery Address & City</label>
+          <input type="text" id="cust-address" required placeholder="Westlands, Nairobi" class="w-full bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-400 transition">
+        </div>
+
+        <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+          <div>
+            <span class="text-xs text-zinc-400 block">Total Investment</span>
+            <span id="modal-product-price" class="text-2xl font-extrabold text-white">KES 0</span>
+          </div>
+          <button type="submit" id="pay-btn" class="bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-black font-extrabold px-6 py-3.5 rounded-xl shadow-lg transition transform hover:-translate-y-0.5">
+            Pay with Paystack
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-auto border-t border-white/10 py-12 px-6 lg:px-12 text-center text-xs text-zinc-500">
+    <p class="mb-2">© 2026 Elilta East Africa Direct Logistics. All rights reserved.</p>
+    <p>Support Concierge: <a href="https://wa.me/254756238589" target="_blank" class="text-amber-400 hover:underline">+254 756 238589</a> | Email: <a href="mailto:kebronafle@gmail.com" class="text-amber-400 hover:underline">kebronafle@gmail.com</a></p>
+  </footer>
+
+  <script>
+    const products = [
+      {
+        id: 'elilta-001',
+        name: 'Pro-Grade 4K Ultra-HD Dashcam & ADAS Security Suite',
+        slug: '4k-dashcam-adas',
+        price_cents: 890000, // KES 8,900
+        display_price: 'KES 8,900',
+        image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80',
+        desc: 'Dual-lens night vision, GPS tracking, real-time lane departure warning, and mobile app sync. Essential for East African highways.'
+      },
+      {
+        id: 'elilta-002',
+        name: 'Smart Biometric Fingerprint & App Door Lock System',
+        slug: 'biometric-smart-lock',
+        price_cents: 1450000, // KES 14,500
+        display_price: 'KES 14,500',
+        image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80',
+        desc: 'Keyless entry via fingerprint, passcode, RFID card, and remote smartphone unlocking. Premium brushed matte alloy finish.'
+      },
+      {
+        id: 'elilta-003',
+        name: 'Industrial-Grade Solar Power Bank & Outdoor Generator 600W',
+        slug: 'solar-generator-600w',
+        price_cents: 2890000, // KES 28,900
+        display_price: 'KES 28,900',
+        image: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80',
+        desc: 'Uninterruptible power backup for homes and offices. Powers laptops, routers, lights, and small appliances during outages.'
+      },
+      {
+        id: 'elilta-004',
+        name: 'Ergonomic Executive Mesh Office Chair with Lumbar Support',
+        slug: 'ergonomic-executive-chair',
+        price_cents: 1250000, // KES 12,500
+        display_price: 'KES 12,500',
+        image: 'https://images.unsplash.com/photo-1580481077494-e3299ac25e94?auto=format&fit=crop&w=800&q=80',
+        desc: 'Breathable multi-zone mesh, 3D adjustable armrests, and 135° recline mechanism for ultimate productivity.'
+      },
+      {
+        id: 'elilta-005',
+        name: 'Ultra-Bright Solar LED Street & Perimeter Security Floodlight 300W',
+        slug: 'solar-floodlight-300w',
+        price_cents: 590000, // KES 5,900
+        display_price: 'KES 5,900',
+        image: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80',
+        desc: 'IP67 waterproof, motion sensor radar, dusk-to-dawn auto illumination with high-efficiency polycrystalline solar panel.'
+      }
+    ];
+
+    let selectedProduct = null;
+
+    function renderProducts() {
+      const grid = document.getElementById('product-grid');
+      grid.innerHTML = products.map(p => `
+        <div class="glass rounded-3xl overflow-hidden flex flex-col group border border-white/10 hover:border-amber-500/40 transition duration-300">
+          <div class="relative h-64 overflow-hidden bg-zinc-900">
+            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute top-4 left-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-amber-400 border border-white/10">In Stock • Express Delivery</div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition">${p.name}</h3>
+            <p class="text-zinc-400 text-sm mb-6 flex-grow">${p.desc}</p>
+            <div class="flex items-center justify-between pt-4 border-t border-white/10 mt-auto">
+              <div>
+                <span class="text-xs text-zinc-500 block">Price (KES)</span>
+                <span class="text-xl font-extrabold text-white">${p.display_price}</span>
+              </div>
+              <button onclick="openCheckout('${p.id}')" class="bg-amber-500 hover:bg-amber-400 text-black font-bold px-5 py-2.5 rounded-xl shadow-md transition transform hover:-translate-y-0.5">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openCheckout(id) {
+      selectedProduct = products.find(x => x.id === id);
+      if (!selectedProduct) return;
+      document.getElementById('modal-product-name').innerText = selectedProduct.name;
+      document.getElementById('modal-product-price').innerText = selectedProduct.display_price;
+      document.getElementById('checkout-modal').classList.remove('hidden');
+      document.getElementById('checkout-modal').classList.add('flex');
+    }
+
+    function closeCheckout() {
+      document.getElementById('checkout-modal').classList.add('hidden');
+      document.getElementById('checkout-modal').classList.remove('flex');
+    }
+
+    async function handleCheckout(event) {
+      event.preventDefault();
+      const name = document.getElementById('cust-name').value;
+      const email = document.getElementById('cust-email').value;
+      const phone = document.getElementById('cust-phone').value;
+      const address = document.getElementById('cust-address').value;
+      const btn = document.getElementById('pay-btn');
+
+      btn.innerText = 'Initializing Paystack...';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch('/api/initialize', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            productId: selectedProduct.id,
+            name,
+            email,
+            phone,
+            address,
+            amount: selectedProduct.price_cents,
+            currency: 'KES'
+          })
+        });
+        const data = await res.json();
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          alert('Could not initialize payment: ' + (data.message || 'Unknown error'));
+          btn.innerText = 'Pay with Paystack';
+          btn.disabled = false;
+        }
+      } catch (err) {
+        alert('Network error connecting to payment gateway.');
+        btn.innerText = 'Pay with Paystack';
+        btn.disabled = false;
+      }
+    }
+
+    renderProducts();
+  </script>
+</body>
+</html>
