@@ -1,0 +1,6 @@
+{
+  "name": "elilta-storefront",
+  "version": "1.0.0",
+  "description": "Elilta East Africa Dropshipping Storefront — GitHub Pages + Supabase Edge Functions + Paystack KES checkout",
+  "private": true
+}
