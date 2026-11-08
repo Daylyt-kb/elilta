@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Processing — Elilta East Africa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #09090b; color: #f4f4f5; }
+    .glass { background: rgba(24, 24, 27, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center px-6">
+
+  <div class="glass max-w-md w-full p-10 rounded-3xl text-center border border-white/20 shadow-2xl">
+    <div class="w-20 h-20 rounded-full bg-amber-500/10 flex items-center justify-center mx-auto mb-6 animate-pulse">
+      <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-500 to-yellow-400 flex items-center justify-center text-black font-extrabold text-2xl shadow-lg shadow-amber-500/30">✓</div>
+    </div>
+
+    <h1 class="text-3xl font-extrabold text-white mb-3">Payment Initiated</h1>
+    <p class="text-zinc-400 mb-8">
+      You are being redirected to Paystack to complete your Elilta order securely.<br>
+    Prices in KES — Card, M-Pesa, Bank Transfer & Apple Pay supported.
+    </p>
+
+    <div class="space-y-3 text-left text-sm text-zinc-300 mb-10">
+      <div class="flex justify-between border-b border-white/10 pb-2">
+        <span>Status:</span>
+        <span class="text-emerald-400 font-semibold">Redirecting to gateway</span>
+      </div>
+      <div class="flex justify-between border-b border-white/10 pb-2">
+        <span>Order Reference:</span>
+        <span id="order-ref" class="font-mono">…</span>
+      </div>
+      <div class="flex justify-between border-b border-white/10 pb-2">
+        <span>Currency:</span>
+        <span class="font-semibold">KES</span>
+      </div>
+    </div>
+
+    <div id="redirect-box" class="hidden space-y-4">
+      <p class="text-xs text-zinc-500 uppercase tracking-wider mb-2">If you are not redirected automatically, click below:</p>
+      <a id="redirect-link" href="#" class="w-full bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-bold py-3 rounded-xl shadow-lg transition">Continue to Paystack</a>
+    </div>
+
+    <p class="text-xs text-zinc-500 mt-8">Need help? <a href="https://wa.me/254756238589" target="_blank" class="text-amber-400 hover:underline">WhatsApp Concierge</a></p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const ref = params.get('ref') || params.get('order_ref') || '';
+    document.getElementById('order-ref').textContent = ref || '—';
+
+    const redirectBox = document.getElementById('redirect-box');
+    const redirectLink = document.getElementById('redirect-link');
+
+    // Initialize the payment, then redirect to the Paystack authorization URL.
+    fetch('/api/initialize', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        productId: params.get('productId') || 'elilta-storefront-order',
+        name: params.get('name') || 'Guest Customer',
+        email: params.get('email') || '',
+        phone: params.get('phone') || '',
+        address: params.get('address') || '',
+        amount: Number(params.get('amount') || '0'),
+        currency: 'KES'
+      })
+    })
+    .then(async (res) => {
+      const data = await res.json();
+      if (data.url) {
+        redirectBox.classList.remove('hidden');
+        redirectLink.href = data.url;
+        setTimeout(() => { window.location.href = data.url; }, 1500);
+      } else {
+        redirectBox.classList.remove('hidden');
+        redirectLink.textContent = 'Retry Payment';
+        redirectLink.onclick = () => { window.location.reload(); };
+        console.error('Init failed:', data);
+      }
+    })
+    .catch(() => {
+      redirectBox.classList.remove('hidden');
+      redirectLink.textContent = 'Retry Payment';
+      redirectLink.onclick = () => { window.location.reload(); };
+    });
+  </script>
+</body>
+</html>
